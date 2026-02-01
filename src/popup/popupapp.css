@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  border-style: solid;
+    border-color: #F2B83A;
+    border-width: 1.5em 0.5em 0.5em 0.5em;
+  min-width: auto;
+  min-height: 100vh;
+}
+
+#popup-app {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
