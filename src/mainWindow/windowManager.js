@@ -30,6 +30,20 @@ class Window {
             new Window(dom_window, screenX || 0, screenY || 0, allow_resize);
         return new_window.Initialize(lock_id);
     }
+
+    static CreateURL(
+      lock_id, innerWidth, innerHeight, screenX, screenY, allow_resize = false,
+        fullscreen = false  
+    ) {
+        const dom_window = window.open(import.meta.env.BASE_URL +
+            'grannyRadio.html', '_blank',
+            `popup,width=${innerWidth},height=${innerHeight},left=${screenX},top=${screenY},fullscreen=${fullscreen ? 1 : 0}`);
+        if (!dom_window)
+            return Promise.resolve(null);
+        var new_window =
+            new Window(dom_window, screenX || 0, screenY || 0, allow_resize);
+        return new_window.Initialize(lock_id);
+    }
     constructor(dom_window, x, y, allow_resize) {
         this.#dom_window = dom_window;
         this.#x = x;
@@ -211,6 +225,17 @@ class WindowManager {
         });
         return windowPromise;
     }
+
+    AddRadioWindow(width, height, x, y, allow_resize = false, fullscreen = false) {
+        const windowPromise = Window.CreateURL(
+            this.#lock_id, width, height, x, y, allow_resize, fullscreen);
+        windowPromise.then(window => {
+            if (window)
+                this.#windows.push(window);
+        });
+        return windowPromise;
+    }
+
     GetWindows() {
         return this.#windows;
     }

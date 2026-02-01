@@ -4,6 +4,7 @@
   import TimeApp from "./TimeApp.svelte";
   import { type PopupState } from "../types";
     import TerminalApp from "./TerminalApp.svelte";
+    import GrannyRadioApp from "../grannyradio/GrannyRadioApp.svelte";
 
   let state = {
     app: "panel",
@@ -26,6 +27,8 @@
   <TimeApp {state} />
 {:else if state.app === "terminal"}
   <TerminalApp {state} />
+{:else if state.app === "radio"}
+  <GrannyRadioApp {state} />
 {:else}
   <div>Unknown app</div>
 {/if}

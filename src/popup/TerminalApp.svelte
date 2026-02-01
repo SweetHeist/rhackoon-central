@@ -35,6 +35,12 @@
       /* console.debug("output: ", state.terminalCommands.input === command) */
 
       let isCommandCorrect = state.terminalCommands.input === command;
+
+
+      if(command === 'open /GrannyRadio'){
+         console.log(command === 'open /GrannyRadio')
+        window.opener?.postMessage({ type: "requestRadio" }, "*");
+      }
       
      /*  addLine(`${isCommandCorrect ? state.terminalCommands.output : state.terminalCommands.error}`);
  */

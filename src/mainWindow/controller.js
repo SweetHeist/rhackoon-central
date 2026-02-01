@@ -168,6 +168,57 @@ export default class Controller {
     }
   }
 
+  openRadioPopup(){
+    let w = {
+      width: 400,
+      height: 300,
+      x: 100,
+      y: 100,
+      allow_resize: false,
+      fullscreen: false
+    }
+
+    const winPromise = this.#window_manager.AddWindow(
+        w.width,
+        w.height,
+        w.x,
+        w.y,
+        w.allow_resize = true,
+        w.fullscreen = false
+      );
+
+      winPromise.then(win => {
+        if (!win) return;
+
+        
+
+        const popup = {
+          id: crypto.randomUUID(),
+          window: win,
+          state: {
+            app: 'radio',
+            mode: w.ui?.mode ?? 'single',
+            role: w.ui?.role ?? 'url',
+            terminalCommands: w.ui?.terminalCommands ?? null
+          }
+        };
+
+        // event listeneeers
+                win.GetDomWindow().addEventListener('keydown', (event) => {
+                    console.log(window);
+                    //window.ShowToast("TITLE","ANYY") // TODO: ?
+                    
+                });
+                win.GetDomWindow().addEventListener('keyup', (event) => {
+                    console.log(event);
+                });
+
+        this.#game_windows.push(popup);
+        console.debug(popup)
+        this.sendStateToPopup(popup);
+      });
+  }
+
   movePopups(){
     for (const popup of this.#game_windows) {
       console.debug(popup.window)

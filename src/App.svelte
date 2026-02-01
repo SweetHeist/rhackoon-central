@@ -85,14 +85,21 @@
       controller.switchPopupToCombineByOverlap();
       //controller.movePopups()
     }
+
+    if(e.data?.type === "requestRadio") {
+      console.debug("REQUESTRADIO--")
+      //controller.switchPopupToCombineByOverlap();
+      //controller.movePopups()
+      controller.openRadioPopup();
+    }
   });
 
    window.addEventListener('keydown', (event) => {
-      console.log(event.key)
+      //console.log(event.key)
     });
     
     window.addEventListener('keyup', (event) => {
-      console.log(event.key)
+      //console.log(event.key)
     });
 
   /*  function startFromUserGesture() {
