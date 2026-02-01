@@ -226,16 +226,6 @@ class WindowManager {
         return windowPromise;
     }
 
-    AddRadioWindow(width, height, x, y, allow_resize = false, fullscreen = false) {
-        const windowPromise = Window.CreateURL(
-            this.#lock_id, width, height, x, y, allow_resize, fullscreen);
-        windowPromise.then(window => {
-            if (window)
-                this.#windows.push(window);
-        });
-        return windowPromise;
-    }
-
     GetWindows() {
         return this.#windows;
     }

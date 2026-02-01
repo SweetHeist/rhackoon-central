@@ -147,12 +147,12 @@ export default class Controller {
 
         // event listeneeers
                 win.GetDomWindow().addEventListener('keydown', (event) => {
-                    console.log(window);
+                    /* console.log(window); */
                     //window.ShowToast("TITLE","ANYY") // TODO: ?
                     
                 });
                 win.GetDomWindow().addEventListener('keyup', (event) => {
-                    console.log(event);
+                    /* console.log(event); */
                 });
 
         this.#game_windows.push(popup);
@@ -205,12 +205,12 @@ export default class Controller {
 
         // event listeneeers
                 win.GetDomWindow().addEventListener('keydown', (event) => {
-                    console.log(window);
+                    /* console.log(window); */
                     //window.ShowToast("TITLE","ANYY") // TODO: ?
                     
                 });
                 win.GetDomWindow().addEventListener('keyup', (event) => {
-                    console.log(event);
+                    /* console.log(event); */
                 });
 
         this.#game_windows.push(popup);

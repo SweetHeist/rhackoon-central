@@ -11,7 +11,6 @@
         "role": "primary",
         "terminalCommands": null
       }
-      
     },
     {
       "x": 740,
@@ -24,7 +23,6 @@
         "role": "primary",
         "terminalCommands": null
       }
-      
     },
     {
       "x": 940,
@@ -36,21 +34,84 @@
         "mode": "single",
         "role": "database",
         "terminalCommands": {
-          "input": "--help",
-          "output": [
-            "Query grandma Jill's purchases this week:",
-            "  grandma jill --purchases",
-            "",
-            "Get more information on an item grandma Jill purchased:",
-            "  grandma jill --purchases --item <itemname>",
-            "",
-            "Example:",
-            "  grandma jill --purchases --item \"cucumber\""
+          "commands": [
+            {
+              "input": "--help",
+              "output": [
+                "Query grandma Jill's purchases this week:",
+                "  grandma jill --purchases",
+                "",
+                "Get more information on an item grandma Jill purchased:",
+                "  grandma jill --purchases --item <itemname>",
+                "",
+                "Example:",
+                "  grandma jill --purchases --item \"cucumber\"",
+                ""
+              ]
+            },
+            {
+              "input": "grandma jill --purchases",
+              "output": [
+                "Purchases this week:",
+                "- butter",
+                "- blueberries",
+                "- cheese",
+                "- batteries"
+              ]
+            },
+            {
+              "input": [
+                "grandma jill --purchases --item butter",
+                "grandma jill --purchases --item \"butter\""
+              ],
+              "output": [
+                "Item: butter",
+                "Purchased: Tuesday 17:40",
+                "Store: Marketo",
+                "Quantity: 1"
+              ]
+            },
+            {
+              "input": [
+                "grandma jill --purchases --item blueberries",
+                "grandma jill --purchases --item \"blueberries\""
+              ],
+              "output": [
+                "Item: blueberries",
+                "Purchased: Tuesday 17:40",
+                "Store: Marketo",
+                "Quantity: 48"
+              ]
+            },
+            {
+              "input": [
+                "grandma jill --purchases --item cheese",
+                "grandma jill --purchases --item \"cheese\""
+              ],
+              "output": [
+                "Item: cheese",
+                "Purchased: Thursday 13:40",
+                "Store: Marketo",
+                "Quantity: 5"
+              ]
+            },
+            {
+              "input": [
+                "grandma jill --purchases --item batteries",
+                "grandma jill --purchases --item \"batteries\""
+              ],
+              "output": [
+                "Item: batteries",
+                "Purchased: Friday 14:00",
+                "Store: Marketo",
+                "Quantity: 21"
+              ],
+              "error": "item data corrupted."
+            }
           ],
-          "error": "sorry we're working on grandma jill's purchases.."
+          "fallbackError": "unknown command. try --help"
         }
       }
-      
     },
     {
       "x": 240,
@@ -62,29 +123,61 @@
         "mode": "single",
         "role": "routine",
         "terminalCommands": {
-          "input": "--help",
-          "output": [
-            "This script returns a clue once grandma Jill's full routine has been assigned correctly.",
-            "",
-            "Get routine checkpoints.",
-            "  grandma jill --routine",
-            "",
-            "Get the times grandma Jill moves to the next location or activity.",
-            " grandma jill --times",
-            "",
-            "Assign a routine to a time:",
-            "  grandma jill --routine <routinename> --time <time>",
-            "",
-            "Returns the clue if all assignments have been done correctly, otherwise shows what's been mapped so far.",
-            "  grandma jill --clue",
-            "",
-            "Example:",
-            "  grandma jill --routine \"kitchen\" --time 20"
+          "commands": [
+            {
+              "input": "--help",
+              "output": [
+                "Get routine checkpoints:",
+                "  grandma jill --routine",
+                "",
+                "Get movement times:",
+                "  grandma jill --times",
+                "",
+                "Assign a routine:",
+                "  grandma jill --routine <routinename> --time <time>",
+                "",
+                "Check progress:",
+                "  grandma jill --clue"
+              ]
+            },
+            {
+              "input": "grandma jill --routine",
+              "output": [
+                "Unassigned routines:",
+                "- door",
+                "- kitchen",
+                "- tv",
+                "- fridge",
+                "- radio",
+                "- bath_cabinet"
+              ]
+            },
+            {
+              "input": "grandma jill --times",
+              "output": [
+                "Movement times:",
+                "- 00",
+                "- 10",
+                "- 20",
+                "- 30",
+                "- 40",
+                "- 50"
+              ]
+            },
+            {
+              "input": "grandma jill --routine kitchen --time 20",
+              "output": [
+                "Assigned:",
+                "  kitchen > 20"
+              ]
+            },
+            {
+              "input": "grandma jill --clue"
+            }
           ],
-          "error": "sorry we're working on grandma jill's routine..."
+          "fallbackError": "invalid routine command. try --help"
         }
       }
-      
     },
     {
       "x": 140,
@@ -96,18 +189,26 @@
         "mode": "single",
         "role": "url",
         "terminalCommands": {
-          "input": "--help",
-          "output": [
-            "Opens a raccooniverse webpage at the specified url:",
-            "  open <url>",
-            "",
-            "Example:",
-            "  open \"/Text\""
+          "commands": [
+            {
+              "input": "--help",
+              "output": [
+                "Open a raccooniverse webpage:",
+                "  open <url>",
+                "",
+                "Example:",
+                "  open /Text"
+              ]
+            },
+            {
+              "input": "open /GrannyRadio",
+              "output": "tuning into granny radio...",
+              "action": "openRadio"
+            }
           ],
-          "error": "sorry we're working on the raccooniverse browser..."
+          "fallbackError": "invalid command or url. try --help"
         }
       }
-      
     }
   ]
 }
