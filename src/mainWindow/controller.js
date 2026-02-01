@@ -170,8 +170,8 @@ export default class Controller {
 
   openRadioPopup(){
     let w = {
-      width: 400,
-      height: 300,
+      width: 700,
+      height: 1000,
       x: 100,
       y: 100,
       allow_resize: false,
