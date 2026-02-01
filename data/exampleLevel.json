@@ -1,0 +1,87 @@
+{
+  "windows": [
+    {
+      "x": 740,
+      "y": 740,
+      "width": 720,
+      "height": 420,
+      "ui": {
+        "app": "terminal",
+        "mode": "single",
+        "role": "database",
+        "terminalCommands": {
+          "input": "--help",
+          "output": [
+            "Query grandma Jill's purchases this week:",
+            "  grandma jill --purchases",
+            "",
+            "Get more information on an item grandma Jill purchased:",
+            "  grandma jill --purchases --item <itemname>",
+            "",
+            "Example:",
+            "  grandma jill --purchases --item \"cucumber\""
+          ],
+          "error": "sorry we're working on grandma jill's purchases.."
+        }
+      }
+      
+    },
+    {
+      "x": 240,
+      "y": 740,
+      "width": 720,
+      "height": 420,
+      "ui": {
+        "app": "terminal",
+        "mode": "single",
+        "role": "routine",
+        "terminalCommands": {
+          "input": "--help",
+          "output": [
+            "This script returns a clue once grandma Jill's full routine has been assigned correctly.",
+            "",
+            "Get routine checkpoints.",
+            "  grandma jill --routine",
+            "",
+            "Get the times grandma Jill moves to the next location or activity.",
+            " grandma jill --times",
+            "",
+            "Assign a routine to a time:",
+            "  grandma jill --routine <routinename> --time <time>",
+            "",
+            "Returns the clue if all assignments have been done correctly, otherwise shows what's been mapped so far.",
+            "  grandma jill --clue",
+            "",
+            "Example:",
+            "  grandma jill --routine \"kitchen\" --time 20"
+          ],
+          "error": "sorry we're working on grandma jill's routine..."
+        }
+      }
+      
+    },
+    {
+      "x": 240,
+      "y": 240,
+      "width": 720,
+      "height": 420,
+      "ui": {
+        "app": "terminal",
+        "mode": "single",
+        "role": "url",
+        "terminalCommands": {
+          "input": "--help",
+          "output": [
+            "Opens a raccooniverse webpage at the specified url:",
+            "  open <url>",
+            "",
+            "Example:",
+            "  open \"www.example.com\""
+          ],
+          "error": "sorry we're working on the raccooniverse browser..."
+        }
+      }
+      
+    }
+  ]
+}
