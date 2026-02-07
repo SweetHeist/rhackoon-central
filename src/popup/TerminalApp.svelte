@@ -7,6 +7,7 @@
   let command = "";
   let outputEl: HTMLDivElement;
 
+  // Little rascal. You should be hacking this...
   const routineState = {
   solution: {
     "00": "radio",

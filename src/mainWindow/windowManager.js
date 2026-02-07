@@ -14,6 +14,8 @@
  limitations under the License.
  */
 
+// Modified by SweetHeist, 2026. Partial refactoring: replacing canvas logic and other small details. 
+
 class Window {
     static Create(
         lock_id, innerWidth, innerHeight, screenX, screenY, allow_resize = false,
