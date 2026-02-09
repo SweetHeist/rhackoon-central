@@ -24,7 +24,7 @@ class Window {
         // TODO: Open one from the active window, and wait for new API features:
         // https://github.com/w3c/window-management/blob/many-windows-many-screens/EXPLAINER_many_windows_many_screens.md
         const dom_window = window.open(import.meta.env.BASE_URL +
-            'empty.html', '_blank',
+            'popup.html', '_blank',
             `popup,width=${innerWidth},height=${innerHeight},left=${screenX},top=${screenY},fullscreen=${fullscreen ? 1 : 0}`);
         if (!dom_window)
             return Promise.resolve(null);
