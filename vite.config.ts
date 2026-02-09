@@ -9,7 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        popup: 'empty.html'
+        popup: 'popup.html'
       },
     },
   },
